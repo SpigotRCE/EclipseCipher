@@ -39,6 +39,7 @@ public class CipherManager {
                 builder.append(EclipseCipher.CHARACTERS.charAt((index - shift + EclipseCipher.CHARACTERS.length()) % EclipseCipher.CHARACTERS.length()));
             }
         }
+        stringShifter.nextInt();
         return builder.toString();
     }
 }
