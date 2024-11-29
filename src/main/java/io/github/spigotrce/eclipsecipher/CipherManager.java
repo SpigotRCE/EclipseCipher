@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class CipherManager {
     private final Random stringShifter;
-    private final int paddingLength;
+    private int paddingLength;
 
     public CipherManager(long key) {
         stringShifter = new Random();
@@ -26,6 +26,7 @@ public class CipherManager {
         }
         builder.append(EclipseCipher.getCharacters(stringShifter.nextInt(), paddingLength));
         stringShifter.setSeed(stringShifter.nextInt());
+        paddingLength = stringShifter.nextInt(512);
         return builder.toString();
     }
 
@@ -42,6 +43,7 @@ public class CipherManager {
         }
         stringShifter.nextInt();
         stringShifter.setSeed(stringShifter.nextInt());
+        paddingLength = stringShifter.nextInt(512);
         return builder.toString();
     }
 }
