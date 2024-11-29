@@ -32,4 +32,8 @@ public class EclipseCipher {
             r = r * CHARACTERS.length() + CHARACTERS.indexOf(c);
         return r;
     }
+
+    public static CipherManager newCipherManager(long key) {
+        return new CipherManager(key);
+    }
 }
