@@ -3,7 +3,7 @@ package io.github.spigotrce.eclipsecipher;
 import java.security.SecureRandom;
 
 public class EclipseCipher {
-    public static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+    public static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/ ";
 
     public static String generateRandomString() {
         SecureRandom secureRandom = new SecureRandom();
