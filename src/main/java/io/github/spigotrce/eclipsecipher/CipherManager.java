@@ -19,10 +19,8 @@ public class CipherManager {
             int index = EclipseCipher.CHARACTERS.indexOf(c);
             if (index == -1)
                 builder.append(c);
-            else {
-                int shift = random.nextInt(EclipseCipher.CHARACTERS.length());
-                builder.append(EclipseCipher.CHARACTERS.charAt((index + shift) % EclipseCipher.CHARACTERS.length()));
-            }
+            else
+                builder.append(EclipseCipher.CHARACTERS.charAt((index + random.nextInt(EclipseCipher.CHARACTERS.length())) % EclipseCipher.CHARACTERS.length()));
         }
         builder.append(EclipseCipher.getCharacters(random.nextInt(), paddingLength));
         random.setSeed(random.nextInt());
@@ -36,10 +34,8 @@ public class CipherManager {
             int index = EclipseCipher.CHARACTERS.indexOf(c);
             if (index == -1)
                 builder.append(c);
-            else {
-                int shift = random.nextInt(EclipseCipher.CHARACTERS.length());
-                builder.append(EclipseCipher.CHARACTERS.charAt((index - shift + EclipseCipher.CHARACTERS.length()) % EclipseCipher.CHARACTERS.length()));
-            }
+            else
+                builder.append(EclipseCipher.CHARACTERS.charAt((index - random.nextInt(EclipseCipher.CHARACTERS.length()) + EclipseCipher.CHARACTERS.length()) % EclipseCipher.CHARACTERS.length()));
         }
         random.nextInt();
         random.setSeed(random.nextInt());
