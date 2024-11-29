@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class CipherManager {
     private final Random stringShifter;
-    private int paddingLength;
+    private final int paddingLength;
 
     public CipherManager(long key) {
         stringShifter = new Random();
