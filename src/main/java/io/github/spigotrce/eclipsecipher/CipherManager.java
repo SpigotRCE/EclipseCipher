@@ -4,13 +4,13 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class CipherManager {
-    private final Random stringShifter;
+    private final Random random;
     private int paddingLength;
 
     public CipherManager(long key) {
-        stringShifter = new Random();
-        stringShifter.setSeed(key);
-        paddingLength = stringShifter.nextInt(16);
+        random = new Random();
+        random.setSeed(key);
+        paddingLength = random.nextInt(16);
     }
 
     public String encrypt(String text) {
@@ -20,13 +20,13 @@ public class CipherManager {
             if (index == -1)
                 builder.append(c);
             else {
-                int shift = stringShifter.nextInt(EclipseCipher.CHARACTERS.length());
+                int shift = random.nextInt(EclipseCipher.CHARACTERS.length());
                 builder.append(EclipseCipher.CHARACTERS.charAt((index + shift) % EclipseCipher.CHARACTERS.length()));
             }
         }
-        builder.append(EclipseCipher.getCharacters(stringShifter.nextInt(), paddingLength));
-        stringShifter.setSeed(stringShifter.nextInt());
-        paddingLength = stringShifter.nextInt(16);
+        builder.append(EclipseCipher.getCharacters(random.nextInt(), paddingLength));
+        random.setSeed(random.nextInt());
+        paddingLength = random.nextInt(16);
         return builder.toString();
     }
 
@@ -37,13 +37,13 @@ public class CipherManager {
             if (index == -1)
                 builder.append(c);
             else {
-                int shift = stringShifter.nextInt(EclipseCipher.CHARACTERS.length());
+                int shift = random.nextInt(EclipseCipher.CHARACTERS.length());
                 builder.append(EclipseCipher.CHARACTERS.charAt((index - shift + EclipseCipher.CHARACTERS.length()) % EclipseCipher.CHARACTERS.length()));
             }
         }
-        stringShifter.nextInt();
-        stringShifter.setSeed(stringShifter.nextInt());
-        paddingLength = stringShifter.nextInt(16);
+        random.nextInt();
+        random.setSeed(random.nextInt());
+        paddingLength = random.nextInt(16);
         return builder.toString();
     }
 }
