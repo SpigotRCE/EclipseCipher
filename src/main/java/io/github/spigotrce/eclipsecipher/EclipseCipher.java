@@ -18,6 +18,19 @@ public class EclipseCipher {
         return stringBuilder.toString();
     }
 
+    public static String getCharacters(int seed, int length) {
+        Random random = new Random();
+        random.setSeed(seed);
+        StringBuilder stringBuilder = new StringBuilder(length);
+
+        for (int i = 0; i < length; i++) {
+            int randomIndex = random.nextInt(EclipseCipher.CHARACTERS.length());
+            stringBuilder.append(EclipseCipher.CHARACTERS.charAt(randomIndex));
+        }
+
+        return stringBuilder.toString();
+    }
+
     public static String deserialize(int i) {
         StringBuilder r = new StringBuilder();
         while (i > 0) {
