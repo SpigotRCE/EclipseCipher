@@ -10,7 +10,7 @@ public class CipherManager {
     public CipherManager(long key) {
         stringShifter = new Random();
         stringShifter.setSeed(key);
-        paddingLength = stringShifter.nextInt(512);
+        paddingLength = stringShifter.nextInt(16);
     }
 
     public String encrypt(String text) {
@@ -26,7 +26,7 @@ public class CipherManager {
         }
         builder.append(EclipseCipher.getCharacters(stringShifter.nextInt(), paddingLength));
         stringShifter.setSeed(stringShifter.nextInt());
-        paddingLength = stringShifter.nextInt(512);
+        paddingLength = stringShifter.nextInt(16);
         return builder.toString();
     }
 
@@ -43,7 +43,7 @@ public class CipherManager {
         }
         stringShifter.nextInt();
         stringShifter.setSeed(stringShifter.nextInt());
-        paddingLength = stringShifter.nextInt(512);
+        paddingLength = stringShifter.nextInt(16);
         return builder.toString();
     }
 }
