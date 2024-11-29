@@ -3,16 +3,31 @@ package io.github.spigotrce.eclipsecipher;
 import java.util.Arrays;
 import java.util.Random;
 
+
+/**
+ * A class that manages encryption and decryption operations using a custom cipher.
+ */
 public class CipherManager {
     private final Random random; // The randomizer used to generate next cipher
     private int paddingLength; // The dynamic length of the padding
 
+    /**
+     * Constructs a new CipherManager with the given key.
+     *
+     * @param key The key used to initialize the random seed.
+     */
     public CipherManager(long key) {
         random = new Random();
         random.setSeed(key);
         paddingLength = random.nextInt(16);
     }
 
+    /**
+     * Encrypts the given text using a custom cipher.
+     *
+     * @param text The text to be encrypted.
+     * @return     The encrypted text.
+     */
     public String encrypt(String text) {
         StringBuilder builder = new StringBuilder(); // Create a new StringBuilder
         for (char c : text.toCharArray()) { // Iterate over the characters
@@ -33,6 +48,12 @@ public class CipherManager {
         return builder.toString(); // Return the cipher
     }
 
+    /**
+     * Decrypts the given cipher using a custom cipher.
+     *
+     * @param cipher The cipher to be decrypted.
+     * @return       The decrypted text.
+     */
     public String decrypt(String cipher) {
         StringBuilder builder = new StringBuilder(); // Create a new StringBuilder
         for (char c : Arrays.copyOfRange(cipher.toCharArray(), 0, cipher.length() - paddingLength)) { // Iterate over the cipher characters
