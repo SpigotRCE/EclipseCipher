@@ -5,7 +5,7 @@ import java.security.SecureRandom;
 public class EclipseCipher {
     public static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/ ";
 
-    public static String generateRandomString() {
+    public static String generateKey() {
         SecureRandom secureRandom = new SecureRandom();
         StringBuilder stringBuilder = new StringBuilder(2048);
 
