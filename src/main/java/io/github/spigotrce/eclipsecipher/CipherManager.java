@@ -25,6 +25,7 @@ public class CipherManager {
             }
         }
         builder.append(EclipseCipher.getCharacters(stringShifter.nextInt(), paddingLength));
+        stringShifter.setSeed(stringShifter.nextInt());
         return builder.toString();
     }
 
@@ -40,6 +41,7 @@ public class CipherManager {
             }
         }
         stringShifter.nextInt();
+        stringShifter.setSeed(stringShifter.nextInt());
         return builder.toString();
     }
 }
