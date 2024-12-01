@@ -8,7 +8,7 @@ import java.util.Random;
  * A class that manages encryption and decryption operations using a custom cipher.
  */
 public class CipherManager {
-    private final Random random; // The randomizer used to generate next cipher
+    private final Random random; // The randomizer used to generate the next cipher
     private int paddingLength; // The dynamic length of the padding
 
     /**
