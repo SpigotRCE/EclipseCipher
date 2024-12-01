@@ -19,7 +19,7 @@ public class EclipseCipher {
         SecureRandom secureRandom = new SecureRandom(); // The randomizer used to generate the secret key
         StringBuilder stringBuilder = new StringBuilder(2048); // Create a new StringBuilder
 
-        for (int i = 0; i < 2048; i++) // Iterate for length of the key
+        for (int i = 0; i < 2048; i++) // Iterate for the length of the key
             // Append a new secure char
             stringBuilder.append(EclipseCipher.CHARACTERS.charAt(secureRandom.nextInt(EclipseCipher.CHARACTERS.length())));
 
