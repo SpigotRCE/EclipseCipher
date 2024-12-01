@@ -3,7 +3,7 @@ package io.github.spigotrce.eclipsecipher;
 public class Test {
     public static void main(String[] args) {
         String text = "Hello, World";
-        long sharedKey = EclipseCipher.serialize(EclipseCipher.generateKey());
+        long sharedKey = EclipseCipher.serialize(EclipseCipher.generateKey(1024));
 
         CipherManager encrypter = EclipseCipher.newCipherManager(sharedKey);
         CipherManager decrypter = EclipseCipher.newCipherManager(sharedKey);

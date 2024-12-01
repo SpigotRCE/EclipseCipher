@@ -15,11 +15,11 @@ public class EclipseCipher {
      *
      * @return The generated secure random key.
      */
-    public static String generateKey() {
+    public static String generateKey(int length) {
         SecureRandom secureRandom = new SecureRandom(); // The randomizer used to generate the secret key
-        StringBuilder stringBuilder = new StringBuilder(2048); // Create a new StringBuilder
+        StringBuilder stringBuilder = new StringBuilder(length); // Create a new StringBuilder
 
-        for (int i = 0; i < 2048; i++) // Iterate for the length of the key
+        for (int i = 0; i < length; i++) // Iterate for the length of the key
             // Append a new secure char
             stringBuilder.append(EclipseCipher.CHARACTERS.charAt(secureRandom.nextInt(EclipseCipher.CHARACTERS.length())));
 
