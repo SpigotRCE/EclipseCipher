@@ -58,7 +58,7 @@ public class CipherManager {
         StringBuilder builder = new StringBuilder(); // Create a new StringBuilder
         for (char c : Arrays.copyOfRange(cipher.toCharArray(), 0, cipher.length() - paddingLength)) { // Iterate over the cipher characters
             int index = EclipseCipher.CHARACTERS.indexOf(c); // Get the index from the charset
-            if (index == -1) // If character doesn't exist in the charset
+            if (index == -1) // If a character doesn't exist in the charset
                 builder.append(c); // Append the character as is
             else
                 // Create a new deciphered char and append it to the builder
