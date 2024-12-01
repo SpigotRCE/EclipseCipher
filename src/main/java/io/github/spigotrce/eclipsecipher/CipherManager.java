@@ -39,7 +39,7 @@ public class CipherManager {
                 builder.append(EclipseCipher.CHARACTERS.charAt((index + random.nextInt(EclipseCipher.CHARACTERS.length())) % EclipseCipher.CHARACTERS.length()));
         }
 
-        builder.append(EclipseCipher.getCharacters(random.nextInt(), paddingLength)); // Append a new padding
+        builder.append(EclipseCipher.getCharacters(random.nextInt(), paddingLength)); // Append the new padding
 
         random.setSeed(random.nextInt()); // Reset the seed
 
