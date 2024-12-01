@@ -32,7 +32,7 @@ public class CipherManager {
         StringBuilder builder = new StringBuilder(); // Create a new StringBuilder
         for (char c : text.toCharArray()) { // Iterate over the characters
             int index = EclipseCipher.CHARACTERS.indexOf(c); // Get the index from the charset
-            if (index == -1) // If character doesn't exist in the charset
+            if (index == -1) // If a character doesn't exist in the charset
                 builder.append(c); // Append the character as is
             else
                 // Create a new ciphered char and append it to the builder
