@@ -12,13 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-
-      - name: Deploy Maven Artifacts with Debugging
+      - name: Deploy Maven Artifacts
         run: |
-          ./mvnw deploy -DaltDeploymentRepository=github-repo::default::https://spigotrce.github.io/maven-repo/ -X
+          ./mvnw deploy -DaltDeploymentRepository=github-repo::default::https://spigotrce.github.io/maven-repo/
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+
