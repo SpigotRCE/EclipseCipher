@@ -14,11 +14,11 @@
     <distributionManagement>
         <repository>
             <id>github-repo</id>
-            <url>https://spigotrce.github.io/maven-repo/maven</url>
+            <url>https://spigotrce.github.io/maven-repo</url>
         </repository>
         <snapshotRepository>
             <id>github-repo-snapshots</id>
-            <url>https://spigotrce.github.io/maven-repo/maven</url>
+            <url>https://spigotrce.github.io/maven-repo</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
