@@ -3,7 +3,7 @@ name: Deploy Maven Package to Custom GitHub Pages Directory
 on:
   push:
     branches:
-      - main  # Adjust this to your main branch name
+      - main
 
 jobs:
   deploy:
