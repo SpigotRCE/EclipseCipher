@@ -16,5 +16,5 @@ jobs:
         run: |
           ./mvnw deploy -DaltDeploymentRepository=github-repo::default::https://spigotrce.github.io/maven-repo/
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
 
