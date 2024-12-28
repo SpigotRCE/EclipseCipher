@@ -1,0 +1,34 @@
+name: Deploy Maven Package to Custom GitHub Pages Directory
+
+on:
+  push:
+    branches:
+      - main  # Adjust this to your main branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11  # Ensure the appropriate Java version is installed
+
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github-token: ${{ secrets.DEPLOY_TOKEN }}  # Deploy token for pushing to gh-pages
+          publish_dir: "target/site"  # Directory containing built site or package files
+          cname: maven-repo  # Optional: If needed, specify CNAME for GitHub Pages
+
+      - name: Deploy to GitHub Pages Subdirectory
+        run: mkdir -p ./maven && cp -r target/site/* ./maven/  # Move the contents to the /maven directory
+
+      - name: Clean up
+        run: rm -rf target/site  # Remove build artifacts to keep things clean
