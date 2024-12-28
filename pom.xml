@@ -10,4 +10,15 @@
 
     <name>Eclipse Cipher</name>
     <description>A text cipher written in Java</description>
+
+    <distributionManagement>
+        <repository>
+            <id>github-repo</id>
+            <url>https://spigotrce.github.io/maven-repo/maven</url>
+        </repository>
+        <snapshotRepository>
+            <id>github-repo-snapshots</id>
+            <url>https://spigotrce.github.io/maven-repo/maven</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
