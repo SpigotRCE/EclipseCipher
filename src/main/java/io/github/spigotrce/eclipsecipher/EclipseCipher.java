@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class EclipseCipher {
     // Charset
-    public static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/ ";
+    public static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/= ";
 
     /**
      * Generates a secure random key of length 2048 characters.
